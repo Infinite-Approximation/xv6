@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        ".eslintrc": "json",
+        "*.vue": "html",
+        "fcntl.h": "c",
+        "types.h": "c",
+        "user.h": "c",
+        "stat.h": "c",
+        "fs.h": "c"
+    }
+}

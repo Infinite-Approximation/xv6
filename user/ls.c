@@ -6,20 +6,26 @@
 char*
 fmtname(char *path)
 {
-  static char buf[DIRSIZ+1];
-  char *p;
+    /**
+     * 从路径中提取最后一个斜杠之后的文件/文件夹，并格式化为
+     * 一个固定长度的字符串
+     */
+    
+    // 声明一个数组放在静态区，节省内存 
+    static char buf[DIRSIZ+1];
+    char *p;
 
-  // Find first character after last slash.
-  for(p=path+strlen(path); p >= path && *p != '/'; p--)
-    ;
-  p++;
+    // Find first character after last slash.
+    for(p=path+strlen(path); p >= path && *p != '/'; p--)
+        ;
+    p++;
 
-  // Return blank-padded name.
-  if(strlen(p) >= DIRSIZ)
-    return p;
-  memmove(buf, p, strlen(p));
-  memset(buf+strlen(p), ' ', DIRSIZ-strlen(p));
-  return buf;
+    // Return blank-padded name.
+    if(strlen(p) >= DIRSIZ)
+        return p;
+    memmove(buf, p, strlen(p));
+    memset(buf+strlen(p), ' ', DIRSIZ-strlen(p));
+    return buf;
 }
 
 void
