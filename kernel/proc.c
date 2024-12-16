@@ -693,3 +693,16 @@ procdump(void)
     printf("\n");
   }
 }
+
+uint64
+count_process(void) { // added function for counting used process slots (lab2)
+  uint64 cnt = 0;
+  for(struct proc *p = proc; p < &proc[NPROC]; p++) {
+    // acquire(&p->lock);
+    // 不需要锁进程 proc 结构，因为我们只需要读取进程列表，不需要写
+    if(p->state != UNUSED) { // 不是 UNUSED 的进程位，就是已经分配的
+        cnt++;
+    }
+  }
+  return cnt;
+}
