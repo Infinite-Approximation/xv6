@@ -49,6 +49,7 @@ sys_sbrk(void)
   addr = p->sz;
   if(n < 0) {
     uvmdealloc(p->pagetable, p->sz, p->sz+n); // 如果是缩小空间，则马上释放
+    kvmdealloc(p->kernelpgtbl, p->sz, p->sz+n);
   }
   p->sz += n; // 懒分配
   return addr;

@@ -154,9 +154,10 @@ UPROGS=\
 	$U/_find\
 	$U/_xargs\
     $U/_sysinfotest\
-    $U/_lazytests\
+    $U/_lazytest\
     $U/_cowtest\
-
+    $U/_pgtbltest\
+	
 fs.img: mkfs/mkfs README $(UEXTRA) $(UPROGS)
 	mkfs/mkfs fs.img README $(UEXTRA) $(UPROGS)
 
