@@ -8,6 +8,8 @@
         "stat.h": "c",
         "fs.h": "c",
         "sysinfo.h": "c",
-        "proc.h": "c"
+        "proc.h": "c",
+        "buf.h": "c",
+        "file.h": "c"
     }
 }
