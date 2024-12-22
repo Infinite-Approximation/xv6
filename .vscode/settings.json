@@ -10,6 +10,10 @@
         "sysinfo.h": "c",
         "proc.h": "c",
         "buf.h": "c",
-        "file.h": "c"
+        "file.h": "c",
+        "param.h": "c",
+        "assert.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c"
     }
 }
